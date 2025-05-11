@@ -1,5 +1,5 @@
 require("mason-lspconfig").setup({
 	--    automatic_enable = false
-	ensure_installed = { "intelephense", "rust_analyzer" },
+	ensure_installed = { "intelephense", "rust_analyzer", "lua_ls" },
 	automatic_installation = true,
 })
