@@ -8,3 +8,6 @@ lspconfig.intelephense.setup({})
 
 -- Lua
 lspconfig.lua_ls.setup({})
+
+-- Haskell
+lspconfig.hls.setup({})
