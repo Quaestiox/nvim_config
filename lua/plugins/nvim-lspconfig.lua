@@ -10,4 +10,4 @@ lspconfig.intelephense.setup({})
 lspconfig.lua_ls.setup({})
 
 -- Haskell
-lspconfig.hls.setup({})
+-- lspconfig.hls.setup({})
