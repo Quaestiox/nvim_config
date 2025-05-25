@@ -10,7 +10,7 @@ require("conform").setup({
 		css = { "prettierd" },
 		html = { "prettierd" },
 		python = { "black" },
-
+		c = { "clang-format" },
 		--		haskell = { "fourmolu" },
 	},
 	format_on_save = {

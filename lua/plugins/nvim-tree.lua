@@ -1,9 +1,9 @@
 require("nvim-tree").setup({
-    git = {
-        enable = false
-    }
+	git = {
+		enable = true,
+	},
 })
 
-require('nvim-web-devicons').setup({
-    default = true
+require("nvim-web-devicons").setup({
+	default = true,
 })
