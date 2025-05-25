@@ -1,4 +1,5 @@
-require("conform").setup({
+conform = require("conform")
+conform.setup({
 	formatters_by_ft = {
 		lua = { "stylua" },
 		rust = { "rustfmt", lsp_format = "fallback" },
@@ -10,12 +11,24 @@ require("conform").setup({
 		css = { "prettierd" },
 		html = { "prettierd" },
 		python = { "black" },
-		c = { "clang-format" },
+		c = { "clang_format" },
+		cpp = { "clang_format" },
 		--		haskell = { "fourmolu" },
 	},
-	format_on_save = {
-		-- I recommend these options. See :help conform.format for details.
-		lsp_format = "fallback",
-		timeout_ms = 500,
+	--	format_on_save = {
+	--		-- I recommend these options. See :help conform.format for details.
+	--		lsp_format = "fallback",
+	--		timeout_ms = 500,
+	--	},
+	formatters = {
+		clang_format = {
+			prepend_args = {
+				"--style={IndentWidth: 4}",
+			},
+		},
 	},
 })
+
+vim.api.nvim_create_user_command("Format", function(opts)
+	conform.format()
+end, {})
