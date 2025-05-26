@@ -104,4 +104,5 @@ require("lazy").setup({
 	},
 	{ "everviolet/nvim" },
 	{ "zapling/mason-conform.nvim", lazy = true },
+    { "Quaestiox/diag-cmd.nvim" },
 })

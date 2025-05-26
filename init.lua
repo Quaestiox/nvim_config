@@ -1,6 +1,6 @@
 require("core.options")
 require("core.keymaps")
-
+require("core.command")
 require("plugins.plugins")
 require("plugins.colorscheme")
 require("plugins.nvim-tree")
@@ -16,10 +16,5 @@ require("plugins.conform")
 require("plugins.markview")
 require("plugins.notify")
 require("plugins.mason-conform")
+require("plugins.diag-cmd")
 
---vim.diagnostic.config({
---	virtual_text = false,
---	signs = false,
---	underline = false,
---	update_in_insert = false,
---})

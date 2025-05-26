@@ -1,0 +1,78 @@
+--local function virtual_text(opts)
+--	local cfg = vim.diagnostic.config()
+--    vim.diagnostic.config({
+--			virtual_text = not cfg.virtual_text,
+--			signs = cfg.signs,
+--			underline = cfg.underline,
+--			update_in_insert = cfg.update_in_insert,
+--    })
+--end
+--
+--local function signs(opts)
+--	local cfg = vim.diagnostic.config()
+--    vim.diagnostic.config({
+--			virtual_text = cfg.virtual_text,
+--			signs = not cfg.signs,
+--			underline = cfg.underline,
+--			update_in_insert = cfg.update_in_insert,
+--    })
+--end
+--
+--local function underline(opts)
+--	local cfg = vim.diagnostic.config()
+--    vim.diagnostic.config({
+--			virtual_text = cfg.virtual_text,
+--			signs = cfg.signs,
+--			underline = not cfg.underline,
+--			update_in_insert = cfg.update_in_insert,
+--    })
+--end
+--
+--local function update_in_insert(opts)
+--	local cfg = vim.diagnostic.config()
+--    vim.diagnostic.config({
+--			virtual_text = cfg.virtual_text,
+--			signs = cfg.signs,
+--			underline = cfg.underline,
+--			update_in_insert = not cfg.update_in_insert,
+--    })
+--end
+--
+--local function diag_default(opts)
+--	local cfg = vim.diagnostic.config()
+--    vim.diagnostic.config({
+--			virtual_text = false,
+--			signs = true,
+--			underline = true,
+--			update_in_insert = false,
+--    })
+--end
+--
+--local function diag_disable(opts)
+--	local cfg = vim.diagnostic.config()
+--    vim.diagnostic.config({
+--			virtual_text = false,
+--			signs = false,
+--			underline = false,
+--			update_in_insert = false,
+--    })
+--end
+--
+--
+--vim.api.nvim_create_autocmd("FileType", {
+--	pattern = { "python", "rust", "lua" },
+--	callback = diag_default
+--})
+--
+--vim.api.nvim_create_user_command("VirtualText", virtual_text,{})
+--
+--vim.api.nvim_create_user_command("Signs", signs , {})
+--
+--vim.api.nvim_create_user_command("Underline", underline, {})
+--
+--vim.api.nvim_create_user_command("UpdateInInsert", update_in_insert, {})
+--
+--vim.api.nvim_create_user_command("DiagDefault", diag_default, {})
+--
+--vim.api.nvim_create_user_command("DiagDisable", diag_disable, {})
+--
