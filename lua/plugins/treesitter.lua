@@ -47,6 +47,14 @@ require("nvim-treesitter.configs").setup({
 		"query",
         "sql",
         "powershell",
+        "nasm",
+        "nim",
+        "ninja",
+        "scala",
+        "scheme",
+        "tmux",
+        "vhdl",
+        "swift",
 	},
 
 	-- Install parsers synchronously (only applied to `ensure_installed`)

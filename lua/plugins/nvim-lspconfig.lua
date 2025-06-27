@@ -1,5 +1,6 @@
 local lspconfig = require("lspconfig")
 
+local function enable_lsp()
 -- Rust
 lspconfig.rust_analyzer.setup({})
 
@@ -11,3 +12,9 @@ lspconfig.lua_ls.setup({})
 
 -- Haskell
 -- lspconfig.hls.setup({})
+
+end
+
+enable_lsp()
+
+
