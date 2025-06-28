@@ -15,3 +15,4 @@ vim.keymap.set("n", "<A-Down>", ":m +1<CR>", opts)
 vim.keymap.set("n", "<A-u>", ":m -2<CR>", opts)
 vim.keymap.set("n", "<A-d>", ":m +1<CR>", opts)
 
+vim.keymap.set("n", "<C-\\>", ":terminal<CR>", opts)
