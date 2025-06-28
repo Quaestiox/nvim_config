@@ -6,7 +6,6 @@ require("plugins.plugins")
 require("plugins.colorscheme")
 require("plugins.telescope")
 require("plugins.treesitter")
-require("plugins.toggleterm")
 require("plugins.lualine")
 require("plugins.mason")
 require("plugins.mason-lspconfig")
@@ -19,5 +18,4 @@ require("plugins.notify")
 require("plugins.mason-conform")
 require("plugins.diag-cmd")
 
-vim.g.VM_default_mappings = 0
-vim.g.VM_leader = '<A-h>'
+

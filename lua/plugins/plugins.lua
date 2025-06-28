@@ -32,7 +32,6 @@ require("lazy").setup({
 		"nvim-treesitter/nvim-treesitter",
 		build = ":TSUpdate",
 	},
-	{ "akinsho/toggleterm.nvim", version = "*", config = true },
 	{
 		"nvim-lualine/lualine.nvim",
 	},
