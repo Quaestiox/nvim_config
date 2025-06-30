@@ -12,7 +12,11 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-	{ "kyazdani42/nvim-tree.lua", event = "VimEnter", dependencies = "nvim-tree/nvim-web-devicons" },
+	{
+		"kyazdani42/nvim-tree.lua",
+		event = "VimEnter",
+		dependencies = { "nvim-tree/nvim-web-devicons"},
+	},
 	{ "nvim-telescope/telescope.nvim", tag = "0.1.8" },
 	{
 		"neanias/everforest-nvim",
@@ -103,31 +107,63 @@ require("lazy").setup({
 	},
 	{ "everviolet/nvim" },
 	{ "zapling/mason-conform.nvim", lazy = true },
-    { "Quaestiox/diag-cmd.nvim" },
-    {
-      'Julian/lean.nvim',
-      event = { 'BufReadPre *.lean', 'BufNewFile *.lean' },
+	{ "Quaestiox/diag-cmd.nvim" },
+	{
+		"Julian/lean.nvim",
+		event = { "BufReadPre *.lean", "BufNewFile *.lean" },
 
-      dependencies = {
-        'neovim/nvim-lspconfig',
-        'nvim-lua/plenary.nvim',
+		dependencies = {
+			"neovim/nvim-lspconfig",
+			"nvim-lua/plenary.nvim",
 
-        -- optional dependencies:
+			-- optional dependencies:
 
-        -- a completion engine
-        --    hrsh7th/nvim-cmp or Saghen/blink.cmp are popular choices
+			-- a completion engine
+			--    hrsh7th/nvim-cmp or Saghen/blink.cmp are popular choices
 
-        -- 'nvim-telescope/telescope.nvim', -- for 2 Lean-specific pickers
-        -- 'andymass/vim-matchup',          -- for enhanced % motion behavior
-        -- 'andrewradev/switch.vim',        -- for switch support
-        -- 'tomtom/tcomment_vim',           -- for commenting
-      },
+			-- 'nvim-telescope/telescope.nvim', -- for 2 Lean-specific pickers
+			-- 'andymass/vim-matchup',          -- for enhanced % motion behavior
+			-- 'andrewradev/switch.vim',        -- for switch support
+			-- 'tomtom/tcomment_vim',           -- for commenting
+		},
 
-      ---@type lean.Config
-      opts = { -- see below for full configuration options
-        mappings = true,
-      }
-    },
-    { "mg979/vim-visual-multi" }
-
+		---@type lean.Config
+		opts = { -- see below for full configuration options
+			mappings = true,
+		},
+	},
+	{ "mg979/vim-visual-multi" },
+	{
+		"kristijanhusak/vim-dadbod-ui",
+		dependencies = {
+			{ "tpope/vim-dadbod", lazy = true },
+			{ "kristijanhusak/vim-dadbod-completion", ft = { "sql", "mysql", "plsql" }, lazy = true },
+		},
+		cmd = {
+			"DBUI",
+			"DBUIToggle",
+			"DBUIAddConnection",
+			"DBUIFindBuffer",
+		},
+		init = function()
+			-- Your DBUI configuration
+			vim.g.db_ui_use_nerd_fonts = 1
+		end,
+	},
+	{ -- optional saghen/blink.cmp completion source
+		"saghen/blink.cmp",
+		version = "1.*",
+		opts = {
+			sources = {
+				default = { "lsp", "path", "snippets", "buffer" },
+				per_filetype = {
+					sql = { "snippets", "dadbod", "buffer" },
+				},
+				-- add vim-dadbod-completion to your completion providers
+				providers = {
+					dadbod = { name = "Dadbod", module = "vim_dadbod_completion.blink" },
+				},
+			},
+		},
+	},
 })

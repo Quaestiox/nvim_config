@@ -10,7 +10,7 @@ conform.setup({
 		typescript = { "prettierd" },
 		css = { "prettierd" },
 		html = { "prettierd" },
-		python = { "black" },
+--		python = { "black" },
 		c = { "clang_format" },
 		cpp = { "clang_format" },
 		--		haskell = { "fourmolu" },
