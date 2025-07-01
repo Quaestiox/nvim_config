@@ -15,7 +15,7 @@ require("lazy").setup({
 	{
 		"kyazdani42/nvim-tree.lua",
 		event = "VimEnter",
-		dependencies = { "nvim-tree/nvim-web-devicons"},
+		dependencies = { "nvim-tree/nvim-web-devicons" },
 	},
 	{ "nvim-telescope/telescope.nvim", tag = "0.1.8" },
 	{
@@ -150,20 +150,30 @@ require("lazy").setup({
 			vim.g.db_ui_use_nerd_fonts = 1
 		end,
 	},
-	{ -- optional saghen/blink.cmp completion source
-		"saghen/blink.cmp",
-		version = "1.*",
-		opts = {
-			sources = {
-				default = { "lsp", "path", "snippets", "buffer" },
-				per_filetype = {
-					sql = { "snippets", "dadbod", "buffer" },
-				},
-				-- add vim-dadbod-completion to your completion providers
-				providers = {
-					dadbod = { name = "Dadbod", module = "vim_dadbod_completion.blink" },
-				},
-			},
+	{
+		"ray-x/go.nvim",
+		dependencies = { -- optional packages
+			"ray-x/guihua.lua",
+			"neovim/nvim-lspconfig",
+			"nvim-treesitter/nvim-treesitter",
 		},
+		opts = {
+			-- lsp_keymaps = false,
+			-- other options
+		},
+		config = function(lp, opts)
+			require("go").setup(opts)
+			local format_sync_grp = vim.api.nvim_create_augroup("GoFormat", {})
+			vim.api.nvim_create_autocmd("BufWritePre", {
+				pattern = "*.go",
+				callback = function()
+					require("go.format").goimports()
+				end,
+				group = format_sync_grp,
+			})
+		end,
+		event = { "CmdlineEnter" },
+		ft = { "go", "gomod" },
+        build = ':lua require("go.install").update_all()'
 	},
 })

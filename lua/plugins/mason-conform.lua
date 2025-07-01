@@ -1,6 +1,6 @@
 require("mason-conform").setup({
 	ensure_installed = {
-		"prettierd", -- JS/TS/CSS/HTML formatter
+--		"prettierd", -- JS/TS/CSS/HTML formatter
 		"stylua", -- Lua formatter
 --		"black", -- Python formatter
 		"gofmt", -- Go formatter

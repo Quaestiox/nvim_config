@@ -13,6 +13,8 @@ lspconfig.lua_ls.setup({})
 -- Haskell
 -- lspconfig.hls.setup({})
 
+lspconfig.gopls.setup({})
+
 end
 
 enable_lsp()

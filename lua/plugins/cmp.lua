@@ -3,7 +3,7 @@ if not cmp_status_ok then
 	return
 end
 
-local lsp_enable_file_type = {"rust", "html", "php"}
+local lsp_enable_file_type = {"rust", "html", "php", "go"}
 
 local snip_status_ok, luasnip = pcall(require, "luasnip")
 if not snip_status_ok then

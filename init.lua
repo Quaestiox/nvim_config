@@ -17,5 +17,5 @@ require("plugins.markview")
 require("plugins.notify")
 require("plugins.mason-conform")
 require("plugins.diag-cmd")
-
+require("plugins.go")
 

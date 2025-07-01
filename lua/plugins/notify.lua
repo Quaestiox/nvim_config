@@ -11,7 +11,7 @@ notify.setup({
 	},
 	level = 2,
 	minimum_width = 50,
-	timeout = 3000,
+	timeout = 1000,
 })
 
 vim.notify = notify
