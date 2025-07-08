@@ -13,6 +13,7 @@ lspconfig.lua_ls.setup({})
 -- Haskell
 -- lspconfig.hls.setup({})
 
+-- Golang
 lspconfig.gopls.setup({})
 
 end
