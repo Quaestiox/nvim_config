@@ -53,6 +53,7 @@ require("nvim-treesitter.configs").setup({
         "scala",
         "scheme",
         "tmux",
+        "tsx",
         "vhdl",
         "swift",
 	},

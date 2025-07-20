@@ -67,7 +67,6 @@ require("lazy").setup({
 	},
 	{ "godlygeek/tabular" },
 	{ "sindrets/diffview.nvim" },
-	{ "rcarriga/nvim-notify", event = "VeryLazy" },
 	{
 		"folke/trouble.nvim",
 		opts = {}, -- for default options, refer to the configuration section for custom setup.
@@ -174,6 +173,9 @@ require("lazy").setup({
 		end,
 		event = { "CmdlineEnter" },
 		ft = { "go", "gomod" },
-        build = ':lua require("go.install").update_all()'
+		build = ':lua require("go.install").update_all()',
 	},
+	{
+		"windwp/nvim-ts-autotag",
+	}
 })

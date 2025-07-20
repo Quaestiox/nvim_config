@@ -9,10 +9,10 @@ vim.keymap.set("n", "<C-Up>", ":resize -2<CR>", opts)
 vim.keymap.set("n", "<C-Down>", ":resize +2<CR>", opts)
 vim.keymap.set("n", "<C-n>", ":NvimTreeToggle<CR>", opts)
 
-vim.keymap.set("n", "<A-Up>", ":m -2<CR>", opts)
-vim.keymap.set("n", "<A-Down>", ":m +1<CR>", opts)
-
-vim.keymap.set("n", "<A-u>", ":m -2<CR>", opts)
-vim.keymap.set("n", "<A-d>", ":m +1<CR>", opts)
+vim.keymap.set("n", "<A-a>", ":m -2<CR>", opts)
+vim.keymap.set("n", "<A-t>", ":m +1<CR>", opts)
 
 vim.keymap.set("n", "<C-\\>", ":terminal<CR>", opts)
+
+vim.keymap.set('n', '<C-j>', "<Plug>(VM-Add-Cursor-Down)", opts)
+vim.keymap.set('n', '<C-k>', '<Plug>(VM-Add-Cursor-Up)', opts)
