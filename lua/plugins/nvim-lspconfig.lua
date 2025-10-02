@@ -1,23 +1,23 @@
-local lspconfig = require("lspconfig")
+-- local lspconfig = require("lspconfig")
+
 
 local function enable_lsp()
 	-- Rust
---	lspconfig.rust_analyzer.setup({})
 
 	-- PHP
-	lspconfig.intelephense.setup({})
+    vim.lsp.enable('intelephense')
 
 	-- Lua
-	lspconfig.lua_ls.setup({})
+    vim.lsp.enable("lua_ls")
 
 	-- Haskell
-	-- lspconfig.hls.setup({})
-
+    -- vim.lsp.enable("hls")
+    
 	-- Golang
-	lspconfig.gopls.setup({})
+    vim.lsp.enable("gopls")
 
 	-- Typescript/Javascript
-	lspconfig.ts_ls.setup({})
+    vim.lsp.enable("ts_ls")
 end
 
 
